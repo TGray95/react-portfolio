@@ -1,14 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import Project from "./components/Project";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import SiteContainer from "./components/SiteContainer"
 
 function App() {
   return (
     <div>
-      <Header />
-      <Footer />
+      <SiteContainer />
     </div>
   );
 }
