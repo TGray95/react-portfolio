@@ -1,0 +1,12 @@
+#aboutContainer {
+    padding-top: 50px;
+}
+
+#aboutContainer p {
+    background-color: #f8f0fbff;
+    font-size: 20px;
+}
+
+#aboutText {
+    border-radius: 10px;
+}

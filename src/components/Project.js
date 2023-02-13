@@ -1,58 +1,47 @@
-import React from 'react';
-import '../styles/Project.css';
+import React from "react";
+import "../styles/Project.css";
 
-// By importing the Section.css file, it is added to the DOM whenever this component loads
+function Project(props) {
+  function mouseOver(e) {
+    // console.log(e.target);
+    e.target.classList.add("opacity-50");
+    // const z = document.createElement('p')
+    // z.setAttribute('id', 'imgOverlay')
+    // const y = document.createElement('p')
+    // z.textContent = "Test"
+    // e.target.appendChild(z)
+    // z.appendChild(y)
+  }
 
-// We can also style a component inside of its JavaScript file by adding style properties to its rendered elements
-// Unlike regular HTML, a JSX style property must be an object instead of a string
-// On a style object, we camelCase all property names, and put all of the values in quotes
-// Non quoted values default to "pixels", e.g. height, margin, padding
-
-// We use JSX curly braces to evaluate the style object on the JSX tag
-
-function Project() {
+  function mouseOff(e) {
+    e.target.classList.remove("opacity-50");
+    // const z = document.getElementById("imgOverlay")
+    // e.target.removeChild(z)
+  }
   return (
-    <section className="section">
-      <h2>Lorem Ipsum Dolor Sit Amet</h2>
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-        voluptas nulla pariatur?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <p>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui
-        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-        et quas molestias excepturi sint occaecati cupiditate non provident,
-        similique sunt in culpa qui officia deserunt mollitia animi, id est
-        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-        cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-        omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-        quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-        ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-        voluptatibus maiores alias consequatur aut perferendis doloribus
-        asperiores repellat.
-      </p>
+    <section className="row">
+      {props.projects.map((item) => (
+        <div className="col-sm-6 mb-3 mb-sm-0 card-container" key={item.id}>
+          <div className="card" style={{ width: "500px" }}>
+            <a href={item.deploy}>
+              <img
+                src={item.thumbnail}
+                onMouseOver={mouseOver}
+                onMouseOut={mouseOff}
+                className={"card-img-top"}
+                alt="..."
+              ></img>
+            </a>
+            <div className="card-body card-info">
+              <h5 className="card-title card-info">{item.name}</h5>
+              <p className="card-text card-info">{item.description}</p>
+              <a href={item.repo} className="btn btn-primary">
+                Project Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
     </section>
   );
 }

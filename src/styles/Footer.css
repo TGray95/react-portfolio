@@ -1,3 +1,15 @@
-.footer p {
-    text-align: center;
+.footer {
+    margin-bottom: 15px;
+}
+
+.footer a {
+    width: auto;
+}
+
+#githubImg {
+    height: 50px;
+}
+
+#gmailImg {
+    height: 50px;
 }

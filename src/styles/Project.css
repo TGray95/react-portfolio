@@ -1,8 +1,12 @@
-.section {
-  background: #f3e5f5;
-  padding: 20px;
+.card-container {
+  padding-top: 20px;
+  text-align: center;
 }
 
-.section h2 {
-  text-align: center;
+.card-info {
+  background-color: #f8f0fbff;
+}
+
+.card-title {
+  text-decoration: underline;
 }
