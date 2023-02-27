@@ -6,7 +6,7 @@ function Navbar({ currentPage, handlePageChange }) {
     <div className='nav'>
       <nav className="navbar navbar-expand-sm bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href='#About'>Tony Gray</a>
+          <a className="navbar-brand" href='#About' onClick={() => handlePageChange('About')}>Tony Gray</a>
           <div className="" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-end">
               <li className="nav-item">
